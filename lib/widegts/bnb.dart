@@ -13,7 +13,7 @@ Widget bnB({void Function(int)? ontap, required int selectedIndex}) {
       unselectedItemColor: const Color(0xffCDD0E3),
       showSelectedLabels: false,
       showUnselectedLabels: false,
-      iconSize: 28,
+      iconSize: 24,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home_filled),

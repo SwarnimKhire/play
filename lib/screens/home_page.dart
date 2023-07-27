@@ -32,98 +32,99 @@ class _HomePageState extends State<HomePage> {
             )),
         actions: [Image.asset('assets/images/Ellipse.png')],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 15.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: RichText(
-                  text: TextSpan(
-                      text: 'Welcome back,',
-                      style: GoogleFonts.alegreya(
+      body: SingleChildScrollView(
+        
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 15.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: RichText(
+                    text: TextSpan(
+                        text: 'Welcome back,',
+                        style: GoogleFonts.alegreya(
+                          textStyle: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        children: <TextSpan>[
+                      TextSpan(
+                          text: 'Sarina!',
+                          style: GoogleFonts.alegreya(
+                              textStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w700)))
+                    ])),
+              ),
+              const SizedBox(height: 28),
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0, bottom: 27),
+                child: Text('How are you feeling today?',
+                    style: GoogleFonts.alegreya(
                         textStyle: const TextStyle(
                             color: Colors.black,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w400),
-                      ),
-                      children: <TextSpan>[
-                    TextSpan(
-                        text: 'Sarina!',
-                        style: GoogleFonts.alegreya(
-                            textStyle: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 30,
-                                fontWeight: FontWeight.w700)))
-                  ])),
-            ),
-            const SizedBox(height: 28),
-            Padding(
-              padding: const EdgeInsets.only(left: 18.0, bottom: 27),
-              child: Text('How are you feeling today?',
-                  style: GoogleFonts.alegreya(
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w400))),
-            ),
-            SizedBox(
-              height: 101,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Category(
-                      color: const Color(0xffEF5DA8),
-                      imgUrl: 'Happy',
-                      title: 'Happy'),
-                  Category(
-                      color: const Color(0xffAEAFF7),
-                      imgUrl: 'calm',
-                      title: 'Calm'),
-                  Category(
-                      color: const Color(0xffF09E54),
-                      imgUrl: 'Relax',
-                      title: 'Relax'),
-                  Category(
-                      color: const Color(0xffA0E3E2),
-                      imgUrl: 'buddha',
-                      title: 'Focus')
-                ],
+                            fontSize: 22,
+                            fontWeight: FontWeight.w400))),
               ),
-            ),
-            const SizedBox(height: 28),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Text('Todays Task',
-                  style: GoogleFonts.alegreyaSans(
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500))),
-            ),
-            const SizedBox(height: 17),
-            BannerCard(
-                subtitle:
-                    'Let’s open up to the  thing that\nmatters amoung the people',
-                title: 'Peer Group Meetings',
-                callText: 'Join Now  ',
-                callUrl: 'Group',
-                color: const Color(0xffFCDDEC),
-                callColor: const Color(0xffEF5DA8),
-                imgName: 'meetup'),
-            const SizedBox(height: 17),
-            BannerCard(
-                subtitle:
-                    'Aura is the most important thing\nthat matters to you.join us on ',
-                title: 'Meditation',
-                callText: '6:00 PM  ',
-                callUrl: 'Frame',
-                callColor: const Color(0xffF09A59),
-                color: const Color(0xffFBE2CC),
-                imgName: 'medi'),
-          ],
+              SizedBox(
+                height: 101,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    Category(
+                        color: Color(0xffEF5DA8),
+                        imgUrl: 'Happy',
+                        title: 'Happy'),
+                    Category(
+                        color: Color(0xffAEAFF7), imgUrl: 'calm', title: 'Calm'),
+                    Category(
+                        color: Color(0xffF09E54),
+                        imgUrl: 'Relax',
+                        title: 'Relax'),
+                    Category(
+                        color: Color(0xffA0E3E2),
+                        imgUrl: 'buddha',
+                        title: 'Focus')
+                  ],
+                ),
+              ),
+              const SizedBox(height: 28),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Text('Todays Task',
+                    style: GoogleFonts.alegreyaSans(
+                        textStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500))),
+              ),
+              const SizedBox(height: 17),
+              const BannerCard(
+                  subtitle:
+                      'Let’s open up to the  thing that\nmatters amoung the people',
+                  title: 'Peer Group Meetings',
+                  callText: 'Join Now  ',
+                  callUrl: 'Group',
+                  color: Color(0xffFCDDEC),
+                  callColor: Color(0xffEF5DA8),
+                  imgName: 'meetup'),
+              const SizedBox(height: 17),
+              const BannerCard(
+                  subtitle:
+                      'Aura is the most important thing\nthat matters to you.join us on ',
+                  title: 'Meditation',
+                  callText: '6:00 PM  ',
+                  callUrl: 'Frame',
+                  callColor: Color(0xffF09A59),
+                  color: Color(0xffFBE2CC),
+                  imgName: 'medi'),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: bnB(
