@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Category extends StatelessWidget {
-  Category({super.key, required this.color, required this.imgUrl, required this.title});
-  Color color;
-  String title;
-  String imgUrl;
+  const Category({super.key, required this.color, required this.imgUrl, required this.title});
+ final Color color;
+ final String title;
+ final String imgUrl;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +20,7 @@ class Category extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: color),
-            child: Image.asset('assets/images/$imgUrl.png'),
+            child: SvgPicture.asset('assets/svg/$imgUrl.svg', fit: BoxFit.scaleDown,),
           ),
           const SizedBox(height: 6),
           Text(

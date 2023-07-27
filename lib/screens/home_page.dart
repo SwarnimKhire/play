@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thursday/screens/play_screen.dart';
 import 'package:thursday/widegts/banner_card.dart';
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int selectedIndex = 0;
+  int? selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +22,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        actions: [Image.network('https://i.ibb.co/jWJ5n3S/Ellipse-2.png')],
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: SvgPicture.asset(
+              'assets/svg/Hamburger.svg',
+              fit: BoxFit.scaleDown,
+            )),
+        actions: [Image.asset('assets/images/Ellipse.png')],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -62,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                       textStyle: const TextStyle(
                           color: Colors.black,
                           fontSize: 22,
-                          fontWeight: FontWeight.w500))),
+                          fontWeight: FontWeight.w400))),
             ),
             SizedBox(
               height: 101,
@@ -122,14 +127,16 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: bnB(
-        selectedIndex: selectedIndex,
+        selectedIndex: selectedIndex ?? 0,
         ontap: (index) {
           switch (index) {
             case 0:
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomePage()));
               break;
             case 1:
-               Navigator.push(context, MaterialPageRoute(builder: (context)=> PlayScreem()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const PlayScreem()));
               break;
           }
           setState(() {

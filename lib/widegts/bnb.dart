@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:thursday/screens/home_page.dart';
 import 'package:thursday/screens/onboarding.dart';
 import 'package:thursday/screens/play_screen.dart';
 
-
-Widget bnB({void Function(int)? ontap,required int selectedIndex}) {
+Widget bnB({void Function(int)? ontap, required int selectedIndex}) {
   return BottomNavigationBar(
       backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed, // Fixed
@@ -16,7 +16,7 @@ Widget bnB({void Function(int)? ontap,required int selectedIndex}) {
       iconSize: 28,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.house_rounded),
+          icon: Icon(Icons.home_filled),
           label: 'home',
         ),
         BottomNavigationBarItem(
@@ -30,13 +30,13 @@ Widget bnB({void Function(int)? ontap,required int selectedIndex}) {
         BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'settings')
       ],
       currentIndex: selectedIndex, //New
-    
+
       onTap: ontap);
 }
 
 List<Widget> pageList = [
-    const HomePage(),
-    const Onboarding(),
-     PlayScreem(),
-   // const Account(),
-  ];
+  const HomePage(),
+  const Onboarding(),
+  const PlayScreem(),
+  // const Account(),
+];
